@@ -54,7 +54,8 @@ $(document).ready(function() {
 
     // resume download
     $('.resumeDw').on('click', function() {
-        window.open("/download/resume_yijisun.pdf")
+        // window.open("/download/resume_yijisun.pdf")
+        alert('준비중입니다')
     });
 
     // go to top
