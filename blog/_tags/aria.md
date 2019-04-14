@@ -1,4 +1,0 @@
----
-name: aria
-title: ARIA
----
