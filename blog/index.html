@@ -1,0 +1,22 @@
+---
+layout: landing
+---
+<section id="banner">
+    <div class="inner">
+        <h2>{{ site.title }}</h2>
+        <div class="txt_intro">
+    	    <p>welcome! this is nona's blog :)</p>
+        	about HTML, CSS, jQuery, Web accessibility
+        </div>
+    </div>
+    <a href="#post" class="more scrolly">
+        <span class="screen_out">자세히보기</span>
+    </a>
+</section>
+
+<section id="post" class="wrapper style2">
+    <div class="inner">
+		{% include item_post.html %}
+        {% include paging.html %}
+    </div>
+</section>
