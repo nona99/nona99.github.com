@@ -1,0 +1,32 @@
+---
+layout: default
+title: category
+permalink: /category/
+---
+
+<section class="wrapper style5">
+	<div class="inner">
+		<h2>category</h2>
+		<p class="desc_section">카테고리 정리</p>
+		{% for tag in site.categories %}
+		<strong id="{{ tag[0] }}">{{ tag[0] | capitalize }} <span>({{ tag[1].size }})</span></strong>
+		<ul class="post-list">
+		    {% assign pages_list = tag[1] %}
+		    {% for post in pages_list %}
+		    {% if post.title != null %}
+		    {% if group == null or group == post.group %}
+		    <li>
+		    	<a href="{{ site.url }}{{ post.url }}">
+		    		{{ post.title }}
+		    		<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">({{ post.date | date: "%Y-%m-%d" }})</time>
+		    	</a>
+		    </li>
+		    {% endif %}
+		    {% endif %}
+		    {% endfor %}
+		    {% assign pages_list = nil %}
+		    {% assign group = nil %}
+		</ul>
+		{% endfor %}
+	</div>
+</section>
